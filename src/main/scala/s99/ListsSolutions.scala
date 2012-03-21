@@ -4,9 +4,12 @@ import Solutions._
 
 trait ListsSolutions {
 
-  def last[T](list: List[T]): T = ???
-  def penultimate[T](list: List[T]): T = ???
-  def nth[T](n: Int, list: List[T]): T = ???
+  def last[T](list: List[T]): T = list (list.size - 1)
+
+  def penultimate[T](list: List[T]): T = list (list.size - 2)
+
+  def nth[T](n: Int, list: List[T]): T = list (n)
+
   def length[T](list: List[T]): Int = ???
   def reverse[T](list: List[T]): List[T] = ???
   def isPalindrome[T](list: List[T]): Boolean = ???
