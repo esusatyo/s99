@@ -5,8 +5,14 @@ import Solutions.???
 trait BinaryTreesSolutions {
 
   sealed abstract class Tree[+T] {
-    def addValue[S >: T](s: S): Tree[S] = ???
-    def isSymmetric: Boolean = ???
+    def addValue[S >: T](s: S): Tree[S] = ??? /*this match {
+			case Nil					=> Node(s, End, End)
+			case t if t.left != End		=> t.left = Node (s, End, End)
+			case t if t.right != End	=> t.right = Node (s, End, End)
+			case t 						=> t.left.addValue(s)
+		}*/
+		
+    def isSymmetric: Boolean = ???//left.leafCount == right.leafCount
     def preOrder: List[T] = ???
     def inOrder: List[T] = ???
     def toDotString: String = ???
@@ -16,7 +22,13 @@ trait BinaryTreesSolutions {
     override def toString = "T(" + value.toString + " " + left.toString + " " + right.toString + ")"
 
     def leafCount: Int = ???
+
     def leafList: List[T] = ???
+	/*value match {
+		case End				=> List()
+		case _					=> List(value) ++ leaf.leafList ++ right.leafList
+	}*/
+	
     def internalList: List[T] = ???
     def atLevel(n: Int): List[T] = ???
     def layoutBinaryTree: PositionedNode[T] = ???

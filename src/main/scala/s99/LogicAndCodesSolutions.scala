@@ -16,14 +16,14 @@ trait LogicAndCodesSolutions { outer =>
 
   }
   
-  def and(a: Boolean,  b: =>Boolean): Boolean = ???
-  def or(a: Boolean,   b: =>Boolean): Boolean = ???
-  def nand(a: Boolean,  b: =>Boolean): Boolean = ???
-  def nor(a: Boolean,  b: =>Boolean): Boolean = ???
-  def xor(a: Boolean,  b: =>Boolean): Boolean = ???
-  def impl(a: Boolean,  b: =>Boolean): Boolean = ???
-  def equ(a: Boolean,  b: =>Boolean): Boolean = ???
-  def not(a: Boolean) = ???
+  def and(a: Boolean,  b: =>Boolean): Boolean = a && b
+  def or(a: Boolean,   b: =>Boolean): Boolean = a || b
+  def nand(a: Boolean,  b: =>Boolean): Boolean = !(a && b)
+  def nor(a: Boolean,  b: =>Boolean): Boolean = !(a || b)
+  def xor(a: Boolean,  b: =>Boolean): Boolean = !(a == b)
+  def impl(a: Boolean,  b: =>Boolean): Boolean = if(a) a == b else true //!a or b
+  def equ(a: Boolean,  b: =>Boolean): Boolean = a == b
+  def not(a: Boolean) = !a
   
   def table2(f: (Boolean, Boolean) => Boolean): String = ???
 
